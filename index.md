@@ -9,7 +9,7 @@ Este projeto foi desenvolvido por [Beatriz Souza da Silva](https://github.com/bi
 O tráfego proveniente é identificado por seu agente de usuário: bifaroBot.
 
 ### Customizando as regra de _robots.txt_
-Bifaro Bot respeita as diretivas padrão de _robots.txt_. Neste exemplo, o Bifaro Bot não coleta documentos em `private/` ou `not-allowed` por meio do uso da biblioteca _RobotFileParser_: 
+Bifaro Bot respeita as diretivas padrão de _robots.txt_. Neste exemplo, o Bifaro Bot não coleta documentos em `private` ou `not-allowed` por meio do uso da biblioteca _RobotFileParser_: 
 ```
 User-agent: bifaroBot
 Allow: /                     # Allow everything
@@ -35,4 +35,4 @@ Para fins didáticos, realizou-se a coleta no dia 15 de Outubro de 2020 de **pá
 Para mais detalhes veja [BifaroBot](https://github.com/fadoaglauss/InfoBifaroBot).
 
 ### Suporte ou Contato
-Você teve problema com o projeto? Entre em contato com o [suporte](fadoa.glauss@gmail.com) por e-mail.
+Você teve problema com o projeto? Entre em contato com o [suporte](mailto:fadoa.glauss@gmail.com) por e-mail.
