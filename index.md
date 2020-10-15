@@ -9,7 +9,7 @@ O tráfego proveniente do Bifarobot é identificado por seu agente de usuário: 
 Bifaro Bot respeita as diretivas padrão de _robots.txt_. Neste exemplo, o Bifaro Bot não coleta documentos em `private/` ou `not-allowed` por meio do uso da biblioteca _RobotFileParser_: 
 ```
 User-agent: bifaroBot
-Allow: /                     # Allow everything (also true if omitted)
+Allow: /                     # Allow everything
 Disallow: /private/          # Disallow this directory
 ```
 ```
@@ -29,7 +29,7 @@ Para fins didáticos, realizou-se a coleta no dia 15 de Outubro de 2020 de **pá
 - https://pt.wikipedia.org/wiki/House,_M.D.
 - https://globoesporte.globo.com
 
-Para mais detalhes veja [BífaroBot](https://github.com/fadoaglauss/InfoBifaroBot).
+Para mais detalhes veja [BifaroBot](https://github.com/fadoaglauss/InfoBifaroBot).
 
 ### Suporte ou Contato
 Você teve problema com o projeto? Entre em contato com o [suporte](fadoa.glauss@gmail.com) por e-mail.
