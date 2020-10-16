@@ -1,6 +1,3 @@
----
-title: Bifaro Bot
----
 ## Seja Bem-Vindo ao Bifaro Bot
 
 Este projeto foi desenvolvido por [Beatriz Souza da Silva](https://github.com/bia-souza), [Fadoa Glauss Vieira](https://github.com/fadoaglauss) e [Robert Cristiam Faustino de Souza](https://github.com/hobbitx) como parte da discplina de _Tópicos Especiais em Computação e Algoritmos: Algorimos de Organização e Recuperação de Informação_ do Centro Federal de Educação Tecnológica de Minas Gerais (CEFET-MG). Seu objetivo é promover o estudo e aprendizado de um coletor de próposito geral para Web.
@@ -46,7 +43,7 @@ Para fins didáticos, realizou-se a coleta no dia 15 de Outubro de 2020 de **pá
 - https://pt.wikipedia.org/wiki/House,_M.D.
 - https://globoesporte.globo.com
 
-Para mais detalhes veja [BifaroBot](https://github.com/fadoaglauss/InfoBifaroBot).
+Para mais detalhes veja [BifaroBot](https://fadoaglauss.github.io/InfoBifaroBot/).
 
 ### Suporte ou Contato
 Você teve problema com o projeto? Entre em contato com o [suporte](mailto:fadoa.glauss@gmail.com) por e-mail.
