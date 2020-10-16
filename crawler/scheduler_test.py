@@ -36,6 +36,7 @@ class SchedulerTest(unittest.TestCase):
         arr_urls_seeds = [urlparse(str_url) for str_url in arr_str_urls_seeds]
         self.assertEqual(3, 3, "Nao foi adicionado as sementes solicitadas")
 
+    @synchronized
     def test_add_remove_pages(self):
         # tuplas url,profundidade a serem testadas
         urlProf = (urlparse("http://www.xpto.com.br/index.html"), 100000)

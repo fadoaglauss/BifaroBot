@@ -2,7 +2,6 @@ from urllib import robotparser
 from util.threads import synchronized
 from collections import OrderedDict
 from .domain import Domain
-from time import sleep
 from urllib.parse import urljoin
 
 
@@ -29,6 +28,7 @@ class Scheduler():
         self.dic_url_per_domain = OrderedDict()
         self.set_discovered_urls = set()
         self.dic_robots_per_domain = {}
+
         for url in arr_urls_seeds:
             self.add_new_page(url[0],url[1])
 
@@ -45,6 +45,7 @@ class Scheduler():
         """
         if(self.int_page_count > self.int_page_limit):
             return True
+
         return False
 
     @synchronized
@@ -68,6 +69,7 @@ class Scheduler():
 
             if domain in self.dic_url_per_domain:
                 urls = self.dic_url_per_domain[domain]
+                
                 if (obj_url, int_depth) in urls:
                     return False
 
@@ -88,14 +90,19 @@ class Scheduler():
         for domain, urls in self.dic_url_per_domain.items():
             if domain.is_accessible():
                 domain.accessed_now()
+                
                 if len(urls[0]) > 0 :
                     url, depth = urls[0]
                     urls.pop(0)
+                
                     if self.can_fetch_page(url):
                         if not urls:
                             self.dic_url_per_domain.pop(domain)
+                
                         self.count_fetched_page()
+
                         return url, depth
+        
         return None,None
 
     def can_fetch_page(self, obj_url):
@@ -106,11 +113,13 @@ class Scheduler():
             robot = self.dic_robots_per_domain[obj_url.netloc]
         else:    
             robot = robotparser.RobotFileParser()
+
             try:
                 robot.set_url(urljoin(obj_url.geturl(),'robots.txt'))
                 robot.read()
                 self.dic_robots_per_domain[obj_url.netloc] = robot
             except:
                 return False
+
         return robot.can_fetch(self.str_usr_agent,obj_url.geturl())
         

@@ -1,0 +1,4 @@
+.ipynb_checkpoints
+crawler/__pycache__
+.vscode
+util/__pycache__
