@@ -21,9 +21,9 @@ class PageFetcher(Thread):
             if "text/html" in response.headers['Content-Type'] :
                 return response.content
             return None
-        except error.HTTPError as exception:
-            print(exception)
+        except:
             return None
+        
     def discover_links(self, obj_url, int_depth, bin_str_content):
         """
         Retorna os links do conteúdo bin_str_content da página já requisitada obj_url
@@ -50,18 +50,19 @@ class PageFetcher(Thread):
         if obj_url is None:
             pass
         else:
-            result = self.request_url(obj_url)
+            try:
+                result = self.request_url(obj_url)
+                if result is not None:
+                    with open("pages.txt","a",encoding="utf-8") as file:
+                        file.write(obj_url.geturl()+"\n")
+                for url_link, depth in self.discover_links(obj_url,int_depth,result):
+                    if isinstance(url_link, str):
+                        pass
+                    else:
+                        self.obj_scheduler.add_new_page(url_link,depth)
             #print(result.decode("utf-8"))
-            
-            with open("pages.txt","a",encoding="utf-8") as file:
-                file.write(obj_url.geturl()+"\n")
-            for url_link, depth in self.discover_links(obj_url,int_depth,result):
-                if isinstance(url_link, str):
-                    pass
-                else:
-                    self.obj_scheduler.add_new_page(url_link,depth)
-            
-        
+            except Exception as e:
+                print(e)
         
 
     def run(self):
